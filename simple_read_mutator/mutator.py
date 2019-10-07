@@ -14,6 +14,9 @@ class Mutator:
         ]
 
     def mutate_sequence(self, sequence, snv_prob=0.01, deletion_prob=0.01, insertion_prob=0.01):
+
+        snv_prob = snv_prob * 1.25  # Adjust up, since 1/4 of substitutions will be to same letter
+
         sequence = np.array(list(sequence), dtype='U3')
         # SNVs
         snv_locations = random(self.length) <= snv_prob
