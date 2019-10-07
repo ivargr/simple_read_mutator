@@ -8,9 +8,9 @@ class Mutator:
     def __init__(self, sequence_length=150):
         self.length = sequence_length
         self.random_bases = [
-            np.array(list("ACGT" * math.ceil(self.length / 4)))[0:self.length],
-            np.array(list("CGTA" * math.ceil(self.length / 4)))[0:self.length],
-            np.array(list("GTAC" * math.ceil(self.length / 4)))[0:self.length],
+            np.array(list("acgt" * math.ceil(self.length / 4)))[0:self.length],
+            np.array(list("cgta" * math.ceil(self.length / 4)))[0:self.length],
+            np.array(list("gtac" * math.ceil(self.length / 3)))[0:self.length],
         ]
 
     def mutate_sequence(self, sequence, snv_prob=0.01, deletion_prob=0.01, insertion_prob=0.01):
